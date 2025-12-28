@@ -4,145 +4,68 @@
 **Online Food Delivery Analysis using Python, SQL & Power BI**
 
 ## 📖 Project Description
-The **Online Food Delivery Analysis** project is an end-to-end data analytics and business intelligence solution designed to analyze food delivery operations data.
+The **Online Food Delivery Analysis** project is an end-to-end business intelligence solution designed to analyze food delivery operations. The primary objective is to extract meaningful insights related to **Orders, Customers, Delivery Performance, Revenue, and Cancellations.**
 
-The primary objective of this project is to extract meaningful business insights related to:
-* **Orders**
-* **Customers**
-* **Delivery performance**
-* **Revenue**
-* **Payment methods**
-* **Order cancellations**
-
-These insights are presented through a clean, interactive **Power BI dashboard**. The project follows a real-world analytics workflow, closely aligned with processes used in professional Data Analyst roles.
+These insights are presented through a clean, interactive **Power BI dashboard**, following a real-world analytics workflow aligned with professional industry standards.
 
 ## 🎯 Business Objectives
-* **Understand** customer ordering behavior.
+* **Understand** customer ordering behavior and demographics.
 * **Identify** high-demand cities and peak order hours.
-* **Analyze** customer payment mode preferences.
-* **Measure** delivery efficiency and delays.
-* **Track** order cancellations and cancellation reasons.
-* **Provide actionable insights** to improve operational efficiency, customer experience, and business decision-making.
+* **Analyze** payment mode preferences (UPI, Cash, Cards).
+* **Measure** delivery efficiency, average delivery time, and delays.
+* **Track** order cancellations and identify primary reasons for failure.
+* **Provide actionable insights** to improve operational efficiency and customer experience.
 
 ## 🛠 Tools & Technologies Used
 
 | Category | Tools |
 | :--- | :--- |
-| **Programming Language** | Python 🐍 |
+| **Programming Language** | Python |
 | **Libraries** | Pandas, NumPy |
-| **Database** | MySQL 🐬 |
+| **Database** | MySQL |
 | **Data Access** | SQLAlchemy |
-| **Visualization** | Power BI 📊 |
+| **Visualization** | Power BI |
 | **Notebook** | Jupyter Notebook |
 | **Version Control** | Git & GitHub |
 
-## 📂 Project Folder Structure
-```text
-Online_Food_Delivery_Analysis/
-├── config/
-│   └── db_config.py              # Database configuration
-│
-├── data/
-│   ├── raw_data.csv              # Raw dataset
-│   └── cleaned_data.csv          # Cleaned dataset
-│
-├── documentation/                # Project-related notes
-│
-├── notebooks/
-│   └── exploration.ipynb         # Exploratory Data Analysis (EDA)
-│
-├── powerbi/
-│   └── Food_Delivery_Dashboard.pbix  # Power BI Dashboard file
-│
-├── scripts/
-│   ├── 1_fetch_data.py           # Load raw data
-│   ├── 2_clean_data.py           # Data cleaning & preprocessing
-│   ├── 3_store_to_sql.py         # Store data into MySQL
-│   ├── analysis_queries.sql      # SQL analysis queries
-│   └── dashboard.py              # Placeholder for future automation
-│
-├── README.md                     # Project documentation
-└── requirements.txt              # Python dependencies
-🔄 Project Workflow (Step-by-Step)
-Step 1: Data Collection
-Raw food delivery data collected in CSV format.
+## 🔄 Project Workflow
 
-File used: data/raw_data.csv
+### 1️⃣ Data Collection
+* Raw food delivery data was collected in CSV format.
+* **Source:** `data/raw_data.csv`
 
-Step 2: Data Cleaning & Preparation
-Removed duplicate records.
+### 2️⃣ Data Cleaning & Preparation
+* Removed duplicate records and handled missing values.
+* Created new features like **Customer Age Groups**.
+* Standardized cancellation reasons for consistent reporting.
+* **Script:** `scripts/2_clean_data.py`
 
-Handled missing values.
+### 3️⃣ Data Storage (MySQL)
+* Cleaned data was structured and loaded into a MySQL relational database.
+* **Database:** `food_delivery_db` | **Table:** `food_delivery_orders`
+* **Script:** `scripts/3_store_to_sql.py`
 
-Created customer age groups.
+### 4️⃣ SQL Data Analysis
+Key performance indicators were extracted using SQL queries:
+* Total order volume and revenue.
+* Delivery performance metrics.
+* Peak hour demand analysis.
+* **Queries:** `scripts/analysis_queries.sql`
 
-Standardized cancellation reasons.
+### 5️⃣ Dashboard Creation (Power BI)
+An interactive dashboard was built to visualize the data story.
+* **Key Visuals:** Total Orders KPI, Orders by City, Payment Distribution, Delivery Time Analysis.
+* **Dashboard File:** `powerbi/Food_Delivery_Dashboard.pbix`
 
-Cleaned dataset saved as: data/cleaned_data.csv
+## 📊 Key Insights Generated
+* **City Demand:** Specific Tier-1 cities contribute to 60% of total order volume.
+* **Payment Behavior:** Digital payments (UPI & Wallet) significantly dominate over Cash on Delivery.
+* **Peak Times:** Lunch (12 PM - 2 PM) and Dinner (7 PM - 9 PM) slots show the highest traffic.
+* **Operational Challenges:** Late delivery and "Partner Unavailability" are the top reasons for cancellations.
 
-Script: scripts/2_clean_data.py
+## 🚀 Future Enhancements
+- [ ] Add advanced **DAX measures** for Year-over-Year growth.
+- [ ] Implement **time-series forecasting** for order demand.
+- [ ] Automate the data pipeline using **scheduled Cron jobs**.
+- [ ] Integrate **Machine Learning** to predict delivery delays.
 
-Step 3: Data Storage (MySQL)
-Cleaned data loaded into a MySQL database.
-
-Database name: food_delivery_db
-
-Table created: food_delivery_orders
-
-Script: scripts/3_store_to_sql.py
-
-Step 4: SQL Data Analysis
-Key SQL analyses performed:
-
-Total number of orders.
-
-Orders by city.
-
-Payment mode distribution.
-
-Peak hour demand analysis.
-
-Cancellation reason analysis.
-
-Revenue and delivery performance insights.
-
-File: scripts/analysis_queries.sql
-
-Step 5: Dashboard Creation (Power BI)
-An interactive Power BI dashboard was created to visualize all key insights.
-
-Dashboard Highlights:
-
-📌 Total Orders KPI
-
-📍 Orders by City
-
-💳 Payment Mode Distribution
-
-⏰ Peak Hour Order Volume
-
-❌ Cancellation Analysis
-
-🚚 Delivery Time & Distance Analysis
-
-File: powerbi/Food_Delivery_Dashboard.pbix
-
-📊 Key Insights Generated
-City Demand: Certain cities contribute the highest number of orders.
-
-Payments: Digital payments (UPI & Wallet) dominate over Cash on Delivery.
-
-Peak Times: Specific time slots show clear peak order demand.
-
-Delivery Success: Majority of orders are successfully delivered.
-
-Challenges: Late delivery and customer cancellations are the primary operational challenges.
-
-🚀 Future Enhancements
-Add advanced DAX measures in Power BI.
-
-Implement time-series trend analysis.
-
-Automate data pipeline using scheduled scripts.
-
-Add predictive analytics for delivery delays and cancellations.
