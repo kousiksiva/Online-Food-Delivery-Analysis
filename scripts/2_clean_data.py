@@ -1,8 +1,3 @@
-"""
-2_clean_data.py
-Cleans raw food delivery data and saves cleaned version
-"""
-
 import pandas as pd
 
 def clean_data():
